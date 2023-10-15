@@ -124,7 +124,28 @@ nav a:not(:hover){
     padding: 1vw;
 }
 /*Contenido de Reseñas*/
+.resenas{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5vw;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1vw;
+}
 
+.titulos_resenas{
+    font-size: 4vw;
+    font-family: 'Cinzel Decorative';
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1vw;
+    text-decoration: underline;
+}
+
+.resenas img
+{
+    width: 22vw;
+    height: 22vw;
+    padding: 1vw;
+}
 /*Contenido de Poesía*/
 
 /*Footer*/
