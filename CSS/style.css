@@ -95,7 +95,7 @@ nav a:not(:hover){
 
 .biografias{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 0.5vw;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 1vw;
@@ -114,11 +114,14 @@ nav a:not(:hover){
     font-size: 2vw;
     text-shadow: 0.05vw 0.05vw gray;
     text-align: justify;
+    padding: 1vw;
 }
 
 .biografias img
 {
     width: 22vw;
+    height: 22vw;
+    padding: 1vw;
 }
 /*Contenido de Reseñas*/
 
