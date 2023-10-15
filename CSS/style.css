@@ -113,9 +113,11 @@ nav a:not(:hover){
     font-family: 'Crimson Text';
     font-size: 2vw;
     text-shadow: 0.05vw 0.05vw gray;
+    text-align: justify;
 }
 
-.biografias img{
+.biografias img
+{
     width: 22vw;
 }
 /*Contenido de Reseñas*/
@@ -124,13 +126,18 @@ nav a:not(:hover){
 
 /*Footer*/
 
-footer{
+footer
+{
     background-color: black;
 }
 
-footer p{
+footer p
+{
     color: white;
     text-align: center;
     font-size: 2vw;
     padding: 5vw;
+}
+@media screen and (max-width: 768px) {
+    
 }
