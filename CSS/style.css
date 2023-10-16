@@ -46,7 +46,10 @@ nav a:not(:hover){
     transform: scale(1);
     transition: ease-in-out 0.2s;
 }
-
+.dropdown
+{
+    display: none;
+}
 /*Contenido del index*/
 
 .titulo{
@@ -147,7 +150,53 @@ nav a:not(:hover){
     float: left;
 }
 /*Contenido de Poesía*/
-
+.main_poesia
+{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2vw;
+}
+.titulo_p
+{
+    font-family: 'Cinzel Decorative';
+    font-size: 5.2vw;
+    text-align: left;
+    margin: 1vw;
+}
+.poesias
+{
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1vw;
+    margin: 5vw;
+}
+.titulos_poesias
+{
+    font-size: 4vw;
+    font-family: 'Cinzel Decorative';
+    padding: 1vw;
+    text-decoration: underline;
+    line-height: 1.5;
+}
+.contenido_total
+{
+    display: flex;
+    justify-content: space-around;
+}
+.contenido_poesias
+{
+    font-family: 'Crimson Text';
+    font-size: 2vw;
+    text-shadow: 0.05vw 0.05vw gray;
+    text-align: left;
+    padding: 1vw;
+    line-height: 1.5;
+}
+.poesias img
+{
+    width: 22vw;
+    height: 22vw;
+    padding: 1vw;
+}
 /*Footer*/
 
 footer
@@ -162,6 +211,27 @@ footer p
     font-size: 2vw;
     padding: 5vw;
 }
+
+/* Instanciacion del responsive de todas las páginas */
 @media screen and (max-width: 768px) {
-    
+    /* General */
+    .fondo{
+        width: auto;
+        height: 100vh;
+    }
+    /* Barra de navegación */
+    nav a, #modo{
+        display: none;
+    }
+    .dropdown, #home{
+        display: block;
+    }
+    .dropdown-contenido{
+        font-family: 'Cinzel Decorative';
+        color: black;
+        text-decoration: none;
+        font-size: 1.8vw;
+        align-self: center;
+        margin-top: 0.5vw;
+    }
 }
