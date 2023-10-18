@@ -75,7 +75,7 @@ nav a:not(:hover){/*Esto para que vuelva a su estado original con otra transici�
 .botones{
     display: flex;
     margin: 2vw;
-    justify-content: space-around;
+    justify-content: space-around;/*Separa el contenido con un espacio alrededor*/
 }
 
 .botones a{
@@ -219,24 +219,24 @@ footer p
 @media screen and (max-width: 768px) {
     /* General */
     .fondo{
-        display: none;
+        display: none;/*Se oculta el fondo para dispositivos de mayor ancho al de la condición*/
     }
     .fondo-tel{
-        display: block;
+        display: block;/*Se muestra el otro fondo, adaptado al diseño responsive*/
         z-index: -2;
-        width: 100%;
+        width: 100%;/*Se asegura de que en cualquier medida siempre ocupe el 100% del ancho de la pantalla*/
         position: absolute;
-        position: fixed;
-        filter: blur(0.6vw);
-        transform: translate(0vw, -9vw);
+        position: fixed;/*Se fija la posición del fondo para navegar en toda la página*/
+        filter: blur(0.6vw);/*Se aplica un difuminado a la imagen*/
+        transform: translate(0vw, -9vw);/*Se mueve la imagen 9vw para arriba para evitar el espacio en blanco generado por el nav una vez se scrollea*/
     }
-    footer p{
+    footer p{/*Se amplifica el tamaño para ver mejor el texto*/
         font-size: 6vw;
         padding: 10vw;
     }
     /* Barra de navegación */
     nav a{
-        display: none;
+        display: none;/*Se dejan de mostrar los links pertenecientes al nav*/
     }
     nav img{
         width: 8vw;
@@ -246,42 +246,42 @@ footer p
         display: block;
     }
     /* Index */
-    .titulo{
+    .titulo{/*Se amplifica el tamaño para ver mejor el texto, además de aumentar el tamaño del margen*/
         font-size: 10vw;
         text-align: center;
         margin: 5vw;
     }
     
-    .introduccion{
+    .introduccion{/*Se amplifica el tamaño para ver mejor el texto, además de aumentar el tamaño del margen y el padding*/
         font-size: 6vw;
         margin: 1vw;
         padding: 4.5vw;
     }
     
-    .botones{
+    .botones{/*Se cambia la dirección del flex a columnas, lo que ubica los botones de la página principal en columnas*/
         display: flex;
         margin: 2vw;
         justify-content: space-around;
         flex-direction: column;
     }
 
-    .botones a{
+    .botones a{/*Corrección a un error visual con el color del fondo de los botones*/
         background-color: transparent;
     }
 
-    .botones a img{
+    .botones a img{/*Se amplifica el tamaño de la imagen y su padding para una mejor visualización*/
         width: 85vw;
         padding: 6vw;
         background-color: white;
     }
     /* Biografías */
     .biografias{
-        display: block;
+        display: block;/*Cambia la forma en la que se muestran los contenedores con esta clase de "flex" a "block"*/
         margin-top: 1vw;
         padding: 2vw;
     }
     
-    .titulos_biografias{
+    .titulos_biografias{/*Se amplifica el tamaño para ver mejor el texto, además de aumentar el tamaño del padding*/
         font-size: 8vw;
         padding: 2vw;
     }
@@ -295,16 +295,16 @@ footer p
     .biografias img
     {
         width: 44vw;
-        height: auto;
+        height: auto;/*Toma la altura original de la imagen adaptandola al ancho especificado*/
         padding: 2vw;
     }
     /*Reseñas*/
-    .resenas{
+    .resenas{/*Se amplifica el tamaño del margen superior y el padding*/
         margin-top: 1vw;
         padding: 2vw;
     }
 
-    .titulos_resenas{
+    .titulos_resenas{/*Se amplifica el tamaño para ver mejor el texto, además de aumentar el tamaño del padding*/
         font-size: 8vw;
         padding: 2vw;
     }
@@ -316,7 +316,7 @@ footer p
         padding: 2vw;
         float: left;/*El texto podrá colocarse por debajo de la imagen una vez supere su longitud (Esto para evitar espacios en blanco debajo de la imagen)*/
     }
-    /*Contenido de Poesía*/
+    /*Contenido de Poesía: se aplica la misma lógica que en el resto de páginas (se amplifican los padding, margin, font-size y width/height)*/
     .main_poesia
     {
         padding: 4vw;
