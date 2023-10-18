@@ -3,14 +3,17 @@
 
 /*Fondo*/
 .fondo{
-    z-index: -2;
+    display: block;/*Hace que sea visible el fondo*/
+    z-index: -2; /*Coloca el fondo en la capa -2*/
     width: 100%;
     position: absolute;
-    position: fixed;
-    filter: blur(0.2vw);
-    transform: translate(0vw, -3vw)
+    position: fixed; /*Fija la imagen para toda la navegación de la página*/
+    filter: blur(0.2vw);/*Agrega un filtro de difuminado para la imagen*/
+    transform: translate(0vw, -3vw);/*Mueve la imagen 3vw para arriba (Esto lo hice porque el nav ocupa 3vw y hace que al navegar por la página haya un rectángulo blanco sobre el fondo)*/
 }
-
+.fondo-tel{
+    display: none;/*Hace que el fondo para el responsive no se vea si no se cumple la condición del ancho de pantalla*/
+}
 /*Barra de navegación*/
 
 nav{
@@ -25,7 +28,7 @@ nav img{
 }
 
 #modo{
-    margin-top: 0.5vw;
+    margin-top: 0.5vw; /*Le agrego este margen a esta id para no afectar al resto de elementos con la misma denominación*/
 }
 
 nav a{
@@ -37,18 +40,18 @@ nav a{
     margin-top: 0.5vw;
 }
 
-nav a:hover{
+nav a:hover{/*Cuando el usuario pase su mouse por encima de alguno de los links, estos se van a transformar en una escala 1.1 con una transición*/
     transform: scale(1.1);
     transition: ease-in-out 0.1s;
 }
 
-nav a:not(:hover){
+nav a:not(:hover){/*Esto para que vuelva a su estado original con otra transición una vez el usuario saque el mouse del link*/
     transform: scale(1);
     transition: ease-in-out 0.2s;
 }
-.dropdown
+.nav-imagenes
 {
-    display: none;
+    display: none;/*Esto sirve para el responsive nomás, hace que los elementos de esta clase no se vean si no se cumple la condición impuesta más abajo*/
 }
 /*Contenido del index*/
 
@@ -84,12 +87,12 @@ nav a:not(:hover){
     padding: 2vw;
 }
 
-.botones a img:hover{
+.botones a img:hover{/*Cuando el usuario pase su mouse por encima de alguno de los botones, estos se van a transformar con una escala 1.1 con una transición*/
     transform: scale(1.1);
     transition: ease-in-out 0.1s;
 }
 
-.botones a img:not(:hover){
+.botones a img:not(:hover){/*Esto sirve para que vuelva a su estado original con otra transición una vez el usuario saque el mouse del link*/
     transform: scale(1);
     transition: ease-in-out 0.2s;
 }
@@ -109,14 +112,14 @@ nav a:not(:hover){
     font-family: 'Cinzel Decorative';
     background-color: rgba(255, 255, 255, 0.9);
     padding: 1vw;
-    text-decoration: underline;
+    text-decoration: underline;/*Subrayado en el título*/
 }
 
 .informacion{
     font-family: 'Crimson Text';
     font-size: 2vw;
-    text-shadow: 0.05vw 0.05vw gray;
-    text-align: justify;
+    text-shadow: 0.05vw 0.05vw gray;/*Sombreado del texto, aplica una sombra gris*/
+    text-align: justify;/*Texto justificado*/
     padding: 1vw;
 }
 
@@ -147,7 +150,7 @@ nav a:not(:hover){
     width: 22vw;
     height: 22vw;
     padding: 1vw;
-    float: left;
+    float: left;/*El texto podrá colocarse por debajo de la imagen una vez supere su longitud (Esto para evitar espacios en blanco debajo de la imagen)*/
 }
 /*Contenido de Poesía*/
 .main_poesia
@@ -175,7 +178,7 @@ nav a:not(:hover){
     font-family: 'Cinzel Decorative';
     padding: 1vw;
     text-decoration: underline;
-    line-height: 1.5;
+    line-height: 1.5;/*Espacio entre líneas, por defecto es 1*/
 }
 .contenido_total
 {
@@ -212,26 +215,142 @@ footer p
     padding: 5vw;
 }
 
-/* Instanciacion del responsive de todas las páginas */
+/* Declaracion del responsive de todas las páginas */
 @media screen and (max-width: 768px) {
     /* General */
     .fondo{
-        width: auto;
-        height: 100vh;
-    }
-    /* Barra de navegación */
-    nav a, #modo{
         display: none;
     }
-    .dropdown, #home{
+    .fondo-tel{
+        display: block;
+        z-index: -2;
+        width: 100%;
+        position: absolute;
+        position: fixed;
+        filter: blur(0.6vw);
+        transform: translate(0vw, -9vw);
+    }
+    footer p{
+        font-size: 6vw;
+        padding: 10vw;
+    }
+    /* Barra de navegación */
+    nav a{
+        display: none;
+    }
+    nav img{
+        width: 8vw;
+        height: 8vw;
+    }
+    .nav-imagenes, #home{
         display: block;
     }
-    .dropdown-contenido{
-        font-family: 'Cinzel Decorative';
-        color: black;
-        text-decoration: none;
-        font-size: 1.8vw;
-        align-self: center;
-        margin-top: 0.5vw;
+    /* Index */
+    .titulo{
+        font-size: 10vw;
+        text-align: center;
+        margin: 5vw;
+    }
+    
+    .introduccion{
+        font-size: 6vw;
+        margin: 1vw;
+        padding: 4.5vw;
+    }
+    
+    .botones{
+        display: flex;
+        margin: 2vw;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .botones a{
+        background-color: transparent;
+    }
+
+    .botones a img{
+        width: 85vw;
+        padding: 6vw;
+        background-color: white;
+    }
+    /* Biografías */
+    .biografias{
+        display: block;
+        margin-top: 1vw;
+        padding: 2vw;
+    }
+    
+    .titulos_biografias{
+        font-size: 8vw;
+        padding: 2vw;
+    }
+    
+    .informacion{
+        font-size: 4vw;
+        text-shadow: 0.1vw 0.1vw gray;
+        padding: 2vw;
+    }
+    
+    .biografias img
+    {
+        width: 44vw;
+        height: auto;
+        padding: 2vw;
+    }
+    /*Reseñas*/
+    .resenas{
+        margin-top: 1vw;
+        padding: 2vw;
+    }
+
+    .titulos_resenas{
+        font-size: 8vw;
+        padding: 2vw;
+    }
+
+    .resenas img
+    {
+        width: 44vw;
+        height: 44vw;
+        padding: 2vw;
+        float: left;/*El texto podrá colocarse por debajo de la imagen una vez supere su longitud (Esto para evitar espacios en blanco debajo de la imagen)*/
+    }
+    /*Contenido de Poesía*/
+    .main_poesia
+    {
+        padding: 4vw;
+    }
+    .titulo_p
+    {
+        font-size: 10vw;
+        margin: 2vw;
+    }
+    .poesias
+    {
+        padding: 2vw;
+        margin: 5vw;
+    }
+    .titulos_poesias
+    {
+        font-size: 8vw;
+        padding: 2vw;
+    }
+    .contenido_total
+    {
+        display: block;
+        justify-content: space-around;
+    }
+    .contenido_poesias
+    {
+        font-size: 4vw;
+        text-shadow: 0.1vw 0.1vw gray;
+        padding: 2vw;
+    }
+    .poesias img
+    {
+        width: 44vw;
+        height: 44vw;
+        padding: 2vw;
     }
 }
