@@ -154,12 +154,12 @@ nav a:not(:hover), #modo:not(:hover){/*Esto para que vuelva a su estado original
     height: 22vw;
     padding: 1vw;
 }
-
+/*Este media query es para el slider de la página Biografías. Cuando el dispositivo tiene 769px de ancho o más, se activa el slider hecho con javascript*/
 @media screen and (min-width: 769px) {
     .carousel-container {
         display: flex;
-        overflow: hidden;
-        margin-top: 0;
+        overflow: hidden;/*El contenido que ocupe más espacio del que entra en la pantalla se ocultará*/
+        margin-top: 0;/*Le aumento el margin de todos lados menos del top*/
         margin-bottom: 5vw;
         margin-right: 5vw;
         margin-left: 5vw;
@@ -174,7 +174,7 @@ nav a:not(:hover), #modo:not(:hover){/*Esto para que vuelva a su estado original
         display: flex;
         justify-content: space-between;
     }
-    
+    /*Ajusta el posicionamiento de los botones del slider*/
     #anterior, #siguiente{
         all: unset;/*Propiedad CSS para eliminar todos los estilos predeterminados de la clase*/
         font-size: 5vw;
