@@ -433,6 +433,11 @@ footer p
     .botones a img{/*Se amplifica el tamaño de la imagen y su padding para una mejor visualización*/
         width: 85vw;
         padding: 6vw;
+        background-color: white;/*Corrección para que en el modo claro el fondo de los botones sea blanco*/
+    }
+
+    .modoOscuro .botones a img{
+        background-color: black;/*Corrección para que en el modo oscuro el fondo de los botones sea negro*/
     }
 
     /* Biografías */
