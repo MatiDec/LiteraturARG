@@ -1,7 +1,9 @@
 # LiteraturARG
 
 Se trata de una página que contiene la información más relevante de la literatura argentina, sus principales autores y algunos análisis de sus obras reflejados en reseñas.
+
 Contenido:
+
 Página principal: Breve introducción y resumen de lo que se encontrará el usuario en la página.
 
 Biografías: Contiene las biografías de diversos autores, destacando lo más importante para la literatura que dejó cada uno, sean sus obras con su forma de escribir o los reconocimientos nacionales e internacionales que consiguieron a lo largo de su vida.
