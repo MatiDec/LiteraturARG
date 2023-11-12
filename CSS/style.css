@@ -433,7 +433,6 @@ footer p
     .botones a img{/*Se amplifica el tamaño de la imagen y su padding para una mejor visualización*/
         width: 85vw;
         padding: 6vw;
-        background-color: white;
     }
 
     /* Biografías */
