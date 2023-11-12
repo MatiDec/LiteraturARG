@@ -19,7 +19,7 @@ function alternarModo(){
     }
 }
 
-modo.addEventListener("click", alternarModo);
+modo.addEventListener("click", alternarModo);/*Al hacer click en el botón de id modo se llama a la función que alterna el modo de claro a oscuro y viceversa*/
 
 /* Slider */
 
