@@ -11,9 +11,19 @@
     filter: blur(0.2vw);/*Agrega un filtro de difuminado para la imagen*/
     transform: translate(0vw, -3vw);/*Mueve la imagen 3vw para arriba (Esto lo hice porque el nav ocupa 3vw y hace que al navegar por la página haya un rectángulo blanco sobre el fondo)*/
 }
-.fondo-tel{
-    display: none;/*Hace que el fondo para el responsive no se vea si no se cumple la condición del ancho de pantalla*/
+.fondoModoOscuro{
+    display: none;
+    z-index: -2; /*Coloca el fondo en la capa -2*/
+    width: 100%;
+    position: absolute;
+    position: fixed; /*Fija la imagen para toda la navegación de la página*/
+    filter: blur(0.2vw);/*Agrega un filtro de difuminado para la imagen*/
+    transform: translate(0vw, -3vw);/*Mueve la imagen 3vw para arriba (Esto lo hice porque el nav ocupa 3vw y hace que al navegar por la página haya un rectángulo blanco sobre el fondo)*/
 }
+.fondo-tel, .fondoModoOscuro-tel{
+    display: none;/*Hace que el fondo, tanto del modo claro como del oscuro, para el responsive no se vea si no se cumple la condición del ancho de pantalla*/
+}
+
 /*Barra de navegación*/
 
 nav{
@@ -29,6 +39,7 @@ nav img{
 
 #modo{
     margin-top: 0.5vw; /*Le agrego este margen a esta id para no afectar al resto de elementos con la misma denominación*/
+    cursor: pointer;
 }
 
 nav a{
@@ -40,12 +51,12 @@ nav a{
     margin-top: 0.5vw;
 }
 
-nav a:hover{/*Cuando el usuario pase su mouse por encima de alguno de los links, estos se van a transformar en una escala 1.1 con una transición*/
+nav a:hover, #modo:hover{/*Cuando el usuario pase su mouse por encima de alguno de los links, estos se van a transformar en una escala 1.1 con una transición*/
     transform: scale(1.1);
     transition: ease-in-out 0.1s;
 }
 
-nav a:not(:hover){/*Esto para que vuelva a su estado original con otra transición una vez el usuario saque el mouse del link*/
+nav a:not(:hover), #modo:not(:hover){/*Esto para que vuelva a su estado original con otra transición una vez el usuario saque el mouse del link*/
     transform: scale(1);
     transition: ease-in-out 0.2s;
 }
@@ -53,6 +64,20 @@ nav a:not(:hover){/*Esto para que vuelva a su estado original con otra transici�
 {
     display: none;/*Esto sirve para el responsive nomás, hace que los elementos de esta clase no se vean si no se cumple la condición impuesta más abajo*/
 }
+
+/*Barra de navegación: Modo claro*/
+.modoOscuro nav{
+    background-color: black;
+}
+
+.modoOscuro #modo{
+    filter: invert(100%);
+}
+
+.modoOscuro nav a{
+    color: white;
+}
+
 /*Contenido del index*/
 
 .titulo{
@@ -129,6 +154,49 @@ nav a:not(:hover){/*Esto para que vuelva a su estado original con otra transici�
     height: 22vw;
     padding: 1vw;
 }
+
+@media screen and (min-width: 769px) {
+    .carousel-container {
+        display: flex;
+        overflow: hidden;
+        margin-top: 0;
+        margin-bottom: 5vw;
+        margin-right: 5vw;
+        margin-left: 5vw;
+    }
+     
+    .carousel-slide {
+        flex: 0 0 100%;
+        height: 100vh;
+    }
+    
+    .botonesSlider {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #anterior, #siguiente{
+        all: unset;/*Propiedad CSS para eliminar todos los estilos predeterminados de la clase*/
+        font-size: 5vw;
+        color: white;
+        font-family: 'Crimson Text';
+        transform: translateY(-40vw);
+    }
+    
+    #anterior:hover, #siguiente:hover{
+        color: gray;
+        transition: ease-in-out 0.1s;
+        cursor: pointer;
+    }
+    
+    #anterior:not(:hover), #siguiente:not(:hover){
+        transition: ease-in-out 0.1s;
+    }
+    
+}
+
+
+
 /*Contenido de Reseñas*/
 .resenas{
     justify-content: space-between;
@@ -204,12 +272,12 @@ nav a:not(:hover){/*Esto para que vuelva a su estado original con otra transici�
 
 footer
 {
-    background-color: black;
+    background-color: white;
 }
 
 footer p
 {
-    color: white;
+    color: black;
     text-align: center;
     font-size: 2vw;
     padding: 5vw;
@@ -220,6 +288,15 @@ footer p
     /* General */
     .fondo{
         display: none;/*Se oculta el fondo para dispositivos de mayor ancho al de la condición*/
+    }
+    .modoOscuro .fondoModoOscuro-tel{
+        display: block;/*Se muestra el otro fondo, adaptado al diseño responsive*/
+        z-index: -2;
+        width: 100%;/*Se asegura de que en cualquier medida siempre ocupe el 100% del ancho de la pantalla*/
+        position: absolute;
+        position: fixed;/*Se fija la posición del fondo para navegar en toda la página*/
+        filter: blur(0.6vw);/*Se aplica un difuminado a la imagen*/
+        transform: translate(0vw, -9vw);/*Se mueve la imagen 9vw para arriba para evitar el espacio en blanco generado por el nav una vez se scrollea*/
     }
     .fondo-tel{
         display: block;/*Se muestra el otro fondo, adaptado al diseño responsive*/
@@ -244,6 +321,10 @@ footer p
     }
     .nav-imagenes, #home{
         display: block;
+    }
+
+    .modoOscuro #resenasimg{
+        filter: invert(100%);/*Esta imagen justo es del color del fondo, por lo que se le invierte el color una vez se activa el modo oscuro*/
     }
     /* Index */
     .titulo{/*Se amplifica el tamaño para ver mejor el texto, además de aumentar el tamaño del margen*/
@@ -274,6 +355,7 @@ footer p
         padding: 6vw;
         background-color: white;
     }
+
     /* Biografías */
     .biografias{
         display: block;/*Cambia la forma en la que se muestran los contenedores con esta clase de "flex" a "block"*/
@@ -298,6 +380,29 @@ footer p
         height: auto;/*Toma la altura original de la imagen adaptandola al ancho especificado*/
         padding: 2vw;
     }
+
+    .carousel-container{
+        display: flex;
+        width: 90vw;
+        scroll-snap-type: x mandatory;
+        overflow-x: scroll;
+        margin-top: 0;
+        margin-bottom: 5vw;
+        margin-right: 5vw;
+        margin-left: 5vw;
+    }
+
+    .carousel-slide{
+        flex: 0 0 100%;
+        width: 100%;
+        object-fit: cover;
+        scroll-snap-align: center;
+        height: 100vh;
+    }
+    #anterior, #siguiente{
+        display: none;
+    }
+
     /*Reseñas*/
     .resenas{/*Se amplifica el tamaño del margen superior y el padding*/
         margin-top: 1vw;
@@ -353,4 +458,84 @@ footer p
         height: 44vw;
         padding: 2vw;
     }
+}
+
+/*Contenido del index*/
+.modoOscuro .titulo{
+    color: white;
+}
+
+.modoOscuro .introduccion{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.modoOscuro .botones a{
+    background-color: rgb(0, 0, 0);
+}
+
+/*Contenido de Biografías*/
+
+.modoOscuro .biografias{
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modoOscuro .titulos_biografias{
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+}
+
+.modoOscuro .informacion{
+    color: white;
+}
+
+.modoOscuro #anterior,.modoOscuro #siguiente{
+    color: black;
+}
+
+.modoOscuro #anterior:hover,.modoOscuro #siguiente:hover{
+    color: white;
+}
+
+/*Contenido de Reseñas*/
+.modoOscuro .resenas{
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modoOscuro .titulos_resenas{
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+}
+
+/*Contenido de Poesía*/
+.modoOscuro .main_poesia
+{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modoOscuro .titulo_p
+{
+    color: white;
+}
+.modoOscuro .poesias
+{
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.modoOscuro .titulos_poesias
+{
+    color: white;
+}
+
+.modoOscuro .contenido_poesias
+{
+    color: white;
+}
+
+.modoOscuro footer
+{
+    background-color: black;
+}
+
+.modoOscuro footer p
+{
+    color: white;
 }
