@@ -12,4 +12,6 @@ Reseñas: En este caso de un mismo autor (Matías Decurgez), se seleccionan algu
 
 Poesía: Se muestra el contenido poético escrito, también por autores de los cuales se tiene la biografía en su página correspondiente, más destacado y más famoso dentro de la literatura argentina.
 
+Estado del proyecto: Terminado para el curso, sujeto a cambios en el futuro.
+
 Idea y página hechas por Matías Decurgez.
